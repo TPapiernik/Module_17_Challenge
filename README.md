@@ -75,6 +75,8 @@ non-English job titles and proper names retained the spelling convention of thei
 Since the number of replacements were so few, and to better illustrate the nature of these updates, they have all been reproduced with explanatory notes below in
 [Appendix A](#appendix-a---data-lexicon), Table 3.
 
+#### Post-ASCII Check
+
 The remainder of non-blank data containing fields and records were quite regular, with expected values and data types within reasonable ranges. There is one Percent-formatted
 field (`int_rate`) with the percent sign presented alongside the data, and the remaining numeric fields contain no symbols except a decimal point. The `total_pymnt` field
 was not rounded nor truncated, and thus contains 2,132 values with 3 or more digits to the right of the decimal place.
