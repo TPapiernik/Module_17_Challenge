@@ -75,6 +75,17 @@ non-English job titles and proper names retained the spelling convention of thei
 Since the number of replacements were so few, and to better illustrate the nature of these updates, they have all been reproduced with explanatory notes below in
 [Appendix A](#appendix-a---data-lexicon), Table 3.
 
+The remainder of non-blank data containing fields and records were quite regular, with expected values and data types within reasonable ranges. There is one Percent-formatted
+field (`int_rate`) with the percent sign presented alongside the data, and the remaining numeric fields contain no symbols except a decimal point. The `total_pymnt` field
+was not rounded nor truncated, and thus contains 2,132 values with 3 or more digits to the right of the decimal place.
+
+As explained in [Appendix A](#appendix-a---data-lexicon), Table 2, the Borrower-Supplied `emp_title` contains a multitude of 40-character truncations, leading and trailing whitespace,
+typing and spelling errors, cryptic industry-specific terms and abbreviations, and foreign-language words in Spanish and French. Considering the size of the dataset, however,
+the vast majority of entries are meaningful and free of errors.
+
+It is unclear if the other fields with only -EMPTY STRING- values were cleared as part of the anonymization process, or if the data was always NULL.
+
+
 ## Deliverables
 
 ### Deliverable 1
