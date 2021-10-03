@@ -47,8 +47,9 @@ The most-recent publicly available LendingClub Loan Data (via archive.org Waybac
 		- In `LoanStats_2019Q1.csv`, Line 1 was originally a non-Header URL for LendingClub Prospectus: (https://www.lendingclub.com/info/prospectus.action), and the final 4 lines
 		were two blank lines followed by two different Sums for total amounts funded in policy codes 1 & 2.
 		- Original source file was retained, unmodified, on disk for reference purposes, but to facilitate easier analysis and data manipulation, these 5 lines were deleted in
-		the copied version of the file, `{base_file_name}_front_and_endmatter_stripped.csv`
-		- The 36 Non-ASCII Characters identified in the dataset were replaced as described in [Appendix A](#appendix-a---data-lexicon), Table 3.
+		a copied version of the file, `{base_file_name}_front_and_endmatter_stripped.csv`
+		- The 36 Non-ASCII Characters identified in the dataset were replaced as described in [Appendix A](#appendix-a---data-lexicon), Table 3. The resulting version of the
+		file was renamed `LoanStats_2019Q1_front_and_endmatter_stripped_ascii_subs.csv` and saved.
 		- Spelling errors were identified in the dataset, but have been retained as original at this time.
 		- This version of the file is completely rectangular and homogeneous, in terms of the number of rows and columns contained within.
 	- `LCDataDictionary.xlsx`: LendingClub Provided Data Dictionary. Most-Recent version available from Archive.org Wayback Machine from Aug. 19, 2019.
@@ -58,7 +59,7 @@ The most-recent publicly available LendingClub Loan Data (via archive.org Waybac
 	- `credit_risk_ensemble_starter_code.ipynb`
 		- Client-provided Starter Code
 	  
-Additional information about `LoanStats_2019Q1.csv` and `LoanStats_2019Q1_front_and_endmatter_stripped.csv` is outlined below in [Appendix A](#appendix-a---data-lexicon), Tables 1 & 2.
+Additional information about `LoanStats_2019Q1.csv` and `LoanStats_2019Q1_front_and_endmatter_stripped_ascii_subs.csv` is outlined below in [Appendix A](#appendix-a---data-lexicon), Tables 1 & 2.
                                             
 #### Data Quality                           
 
