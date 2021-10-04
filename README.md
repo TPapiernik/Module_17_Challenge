@@ -45,6 +45,7 @@ The purpose of this analysis is to predict Credit Risk for Borrowers using a his
 		- Dependencies:
 			- collections [Counter]
 			- imblearn.combine [SMOTEENN]
+			- imblearn.ensemble [BalancedRandomForestClassifier]
 			- imblearn.metrics [classification_report_imbalanced]
 			- imblearn.over_sampling [RandomOverSampler, SMOTE]
 			- imblearn.under_sampling [ClusterCentroids]
@@ -54,6 +55,7 @@ The purpose of this analysis is to predict Credit Risk for Borrowers using a his
 			- sklearn.linear_model [LogisticRegression]
 			- sklearn.metrics [balanced_accuracy_score, confusion_matrix]
 			- sklearn.model_selection [train_test_split]
+			- sklearn.preprocessing [StandardScaler]
 			- warnings
 
 - Data:
