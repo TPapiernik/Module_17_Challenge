@@ -66,11 +66,13 @@ Additional information about `LoanStats_2019Q1.csv` and `LoanStats_2019Q1_front_
 ##### ASCII Check
 
 As a first-pass data cleaning task, `LoanStats_2019Q1_front_and_endmatter_stripped.csv` was checked for the presence of non-ASCII Characters.
-36 Lines were identified containing non-ASCII characters, with one-match per line, for a total of 36 non-ASCII characters in the dataset.
+36 Lines were identified containing non-ASCII characters, with one-match per line, all in Borrower-Supplied Field 11 `emp_title`, for a total of 36 non-ASCII characters in the dataset.
 The vast majority (20) of these matches were Unicode Right Single Quotes (U+2019), one was a Unicode En dash (U+2013), and the rest were accented Latin Characters,
 mostly inadvertently incorrectly applied or corrupted (e.g. "Área supervisor").
 In the places where these non-ASCII characters were correctly applied, they were in non-English language job titles and proper names such as "Chófer", "Construcción",
-"Ana González", and "Estée Lauder". These characters were replaced with an equivalent from the ASCII Character Set, and
+"Ana González", and "Estée Lauder".
+
+These characters were replaced with an equivalent from the ASCII Character Set, and
 non-English job titles and proper names retained the spelling convention of their origin language with the exception of the non-ASCII to ASCII substitution.
 Since the number of replacements were so few, and to better illustrate the nature of these updates, they have all been reproduced with explanatory notes below in
 [Appendix A](#appendix-a---data-lexicon), Table 3.
