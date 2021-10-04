@@ -20,7 +20,7 @@ The most-recent publicly available LendingClub Loan Data (via archive.org Waybac
 
 ### Purpose
 
-
+The purpose of this analysis is to predict Credit Risk for Borrowers using a historical collection of Loan Data using a Machine Learning Approach.
 
 ### Tasks
 
@@ -32,13 +32,30 @@ The most-recent publicly available LendingClub Loan Data (via archive.org Waybac
 
 ### Deliverables
 
+1. Use Resampling Models to Predict Credit Risk
+2. Use the SMOTEENN Algorithm to Predict Credit Risk
+3. Use Ensemble Classifiers to Predict Credit Risk
+4. A Written Report on the Credit Risk Analysis (this README.md)
 
 
 ### Resources
 
 - Software:
-	- Jupyter notebook server 6.3.0, running Python 3.7.10 64-bit (Dependencies: )
-	- 
+	- Jupyter notebook server 6.3.0, running Python 3.7.10 64-bit
+		- Dependencies:
+			- collections [Counter]
+			- imblearn.combine [SMOTEENN]
+			- imblearn.metrics [classification_report_imbalanced]
+			- imblearn.over_sampling [RandomOverSampler, SMOTE]
+			- imblearn.under_sampling [ClusterCentroids]
+			- numpy
+			- pandas
+			- pathlib
+			- sklearn.linear_model [LogisticRegression]
+			- sklearn.metrics [balanced_accuracy_score, confusion_matrix]
+			- sklearn.model_selection [train_test_split]
+			- warnings
+
 - Data:
 	- `LoanStats_2019Q1.csv`
 		- Client-provided dataset of Anonymized LendingClub Notes Approval Results and Associated Metadata.
@@ -94,7 +111,7 @@ It is unclear if the other fields with only -EMPTY STRING- values were cleared a
 
 ### Deliverable 1
 
-
+See `credit_risk_resampling.ipynb`
 
 ### Deliverable 2
 
@@ -107,6 +124,34 @@ It is unclear if the other fields with only -EMPTY STRING- values were cleared a
 
 ## Results
 
+### Overview of the Analysis
+
+The purpose of this analysis was to compare and contrast the accuracy of a battery
+of Machine Learning Algorithms to predict whether a given Loan would be 'low_risk'
+or 'high_risk', given a collection of associated input data.
+
+### Deliverable 1 Overview
+
+A brief summary of the results obtained while completing Deliverable 1
+is shown here in Table R1 (all values rounded to 3 digits).
+
+**Table R1: Deliverable 1 Credit Risk Resampling Results Overview**
+| Method                            | Balanced Accuracy Score    | Average Precision Score    | Average Recall Score
+|-----------------------------------|----------------------------|----------------------------|---------------------
+| Naive Random Oversampling         | 0.660                      | 0.99                       | 0.58
+| SMOTE Oversampling                | 0.658                      | 0.99                       | 0.68
+| Cluster Centroids Undersampling   | 0.537                      | 0.99                       | 0.41
+
+
+### Deliverable 2 Ovewview
+
+A brief summary of the results obtained while completing Deliverable 2
+is shown here in Table R2 (all values rounded to 3 digits).
+
+**Table R2: Deliverable 2 Credit Risk Resampling Results Overview**
+| Method                            | Balanced Accuracy Score    | Average Precision Score    | Average Recall Score
+|-----------------------------------|----------------------------|----------------------------|---------------------
+| SMOTEENN Undersampling            | 0.654                      | 0.99                       | 0.55
 
 
 ## Summary
