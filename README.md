@@ -102,8 +102,8 @@ Since the number of replacements were so few, and to better illustrate the natur
 
 #### Post-ASCII Check
 
-The remainder of non-blank data containing fields and records were quite regular, with expected values and data types within reasonable ranges. There is one Percent-formatted
-field (`int_rate`) with the percent sign presented alongside the data, and the remaining numeric fields contain no symbols except a decimal point. The `total_pymnt` field
+The remainder of non-blank data containing fields and records were quite regular, with expected values and data types within reasonable ranges. There are two Percent-formatted
+fields (`int_rate`, `revol_util`) with the percent sign presented alongside the data, and the remaining numeric fields contain no symbols except a decimal point. The `total_pymnt` field
 was not rounded nor truncated, and thus contains 2,132 values with 3 or more digits to the right of the decimal place.
 
 As explained in [Appendix A](#appendix-a---data-lexicon), Table 2, the Borrower-Supplied `emp_title` contains a multitude of 40-character truncations, leading and trailing whitespace,
