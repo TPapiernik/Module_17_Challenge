@@ -74,9 +74,13 @@ The purpose of this analysis is to predict Credit Risk for Borrowers using a his
 	- `LCDataDictionary.xlsx`: LendingClub Provided Data Dictionary. Most-Recent version available from Archive.org Wayback Machine from Aug. 19, 2019.
 	URL: (https://web.archive.org/web/20190819231817/https://www.lendingclub.com/info/download-data.action)
 	- `credit_risk_resampling_starter_code.ipynb`
-		- Client-provided Starter Code
+		- Client-provided Starter Code Jupyter Notebook File
+	- `credit_risk_resampling.ipynb`
+		- User-updated Jupyter Notebook derived from `credit_risk_resampling_starter_code.ipynb`
 	- `credit_risk_ensemble_starter_code.ipynb`
-		- Client-provided Starter Code
+		- Client-provided Starter Code Jupyter Notebook File
+	- `credit_risk_ensemble.ipynb`
+		- User-updated Jupyter Notebook derived from `credit_risk_ensemble_starter_code.ipynb`
 	  
 Additional information about `LoanStats_2019Q1.csv` and `LoanStats_2019Q1_front_and_endmatter_stripped_ascii_subs.csv` is outlined below in [Appendix A](#appendix-a---data-lexicon), Tables 1 & 2.
                                             
@@ -117,11 +121,11 @@ See `credit_risk_resampling.ipynb`
 
 ### Deliverable 2
 
-
+See `credit_risk_resampling.ipynb`
 
 ### Deliverable 3
 
-
+See `credit_risk_ensemble.ipynb`
 
 
 ## Results
@@ -138,26 +142,100 @@ A brief summary of the results obtained while completing Deliverable 1
 is shown here in Table R1 (all values rounded to 3 digits).
 
 **Table R1: Deliverable 1 Credit Risk Resampling Results Overview**
-| Method                            | Balanced Accuracy Score    | Average Precision Score    | Average Recall Score
-|-----------------------------------|----------------------------|----------------------------|---------------------
-| Naive Random Oversampling         | 0.660                      | 0.99                       | 0.58
-| SMOTE Oversampling                | 0.658                      | 0.99                       | 0.68
-| Cluster Centroids Undersampling   | 0.537                      | 0.99                       | 0.41
+| Method                            | Balanced Accuracy Score    | high_risk Precision Score    | high_risk Recall Score | high_risk F1 Score
+|-----------------------------------|----------------------------|------------------------------|------------------------|-------------------
+| Naive Random Oversampling         | 0.660                      | 0.01                         | 0.74                   | 0.02
+| SMOTE Oversampling                | 0.658                      | 0.01                         | 0.63                   | 0.02
+| Cluster Centroids Undersampling   | 0.537                      | 0.01                         | 0.66                   | 0.01
 
 
-### Deliverable 2 Ovewview
+### Deliverable 2 Overview
 
 A brief summary of the results obtained while completing Deliverable 2
 is shown here in Table R2 (all values rounded to 3 digits).
 
 **Table R2: Deliverable 2 Credit Risk Resampling Results Overview**
-| Method                            | Balanced Accuracy Score    | Average Precision Score    | Average Recall Score
-|-----------------------------------|----------------------------|----------------------------|---------------------
-| SMOTEENN Undersampling            | 0.654                      | 0.99                       | 0.55
+| Method                            | Balanced Accuracy Score    | high_risk Precision Score    | high_risk Recall Score | high_risk F1 Score
+|-----------------------------------|----------------------------|------------------------------|------------------------|-------------------
+| SMOTEENN Undersampling            | 0.654                      | 0.01                         | 0.76                   | 0.02
+
+
+### Deliverable 3 Overview
+
+A brief summary of the results obtained while completing Deliverable 3
+is shown here in Table R3 (all values rounded to 3 digits).
+
+**Table R3: Deliverable 3 Credit Risk Ensemble Results Overview**
+| Method                            | Balanced Accuracy Score    | high_risk Precision Score    | high_risk Recall Score | high_risk F1 Score
+|-----------------------------------|----------------------------|------------------------------|------------------------|-------------------
+| Balanced Random Forest Classifier | 0.788                      | 0.03                         | 0.70                   | 0.06
+| AdaBoost Classifier               | 0.932                      | 0.09                         | 0.92                   | 0.16
+
+
+### Discussion of Results
+
+What follows is a brief discussion of the results obtained for each of the 6
+models tested that is displayed without commentary in Tables R1-R3 above.
+
+- Naive Random Oversampling
+	- Poor Accuracy and Fair Recall, very low Precision
+- SMOTE Oversampling
+	- Poor Accuracy and Poor Recall, very low Precision
+- Cluster Centroids Undersampling
+	- Poor Accuracy and Poor Recall, very low Precision
+- SMOTEENN Undersampling
+	- Poor Accuracy and Poor Recall, very low Precision
+- Balanced Random Forest Classifier
+	- Fair Accuracy and Fair Recall, very low Precision
+- AdaBoost Classifier
+	- Good Accuracy and Good Recall, improved but still very low Precision
+
+Imbalanced Classification Reports for each of the 6 models are reproduced for reference
+below as Figures 1-6.
+
+**Figure 1: Naive Random Oversampling Imbalanced Classification Report**
+
+![Figure 1](Images/Figure_01_Naive_Random_Oversampling.png "Figure 1")
+
+
+**Figure 2: SMOTE Oversampling Imbalanced Classification Report**
+
+![Figure 2](Images/Figure_02_SMOTE_Oversampling.png "Figure 2")
+
+
+**Figure 3: Cluster Centroids Undersampling Imbalanced Classification Report**
+
+![Figure 3](Images/Figure_03_Cluster_Centroids_Undersampling.png "Figure 3")
+
+
+**Figure 4: SMOTEENN Undersampling Imbalanced Classification Report**
+
+![Figure 4](Images/Figure_04_SMOTEENN_Undersampling.png "Figure 4")
+
+
+**Figure 5: Balanced Random Forest Imbalanced Classification Report**
+
+![Figure 5](Images/Figure_05_Balanced_Random_Forest.png "Figure 5")
+
+
+**Figure 6: AdaBoost Imbalanced Classification Report**
+
+![Figure 6](Images/Figure_06_AdaBoost.png "Figure 6")
 
 
 ## Summary
 
+Overall, all 6 models performed poorly to predict whether a given loan would be 'high_risk' or not.
+
+The Easy Ensemble AdaBoost Classifier model performed the best of all currently-tested alternatives,
+but still too poorly to recommend.
+
+For 'high_risk' predictions, this model achieved 9% Accuracy
+with 92% Recall. This means that out of 100 Loans flagged as 'high_risk', 9 were actually 'high_risk',
+and that 92% of 'high_risk' Loans were correctly identified. The low F1 Score for this model of 0.16
+reflects this significant difference between the Precision and Sensitivity of the model.
+
+I would not recommend the use of any of these models to predict Credit Risk with any level of confidence.
 
 ## Appendix A - Data Lexicon
 
