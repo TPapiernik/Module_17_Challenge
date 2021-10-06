@@ -24,11 +24,15 @@ The purpose of this analysis is to predict Credit Risk for Borrowers using a his
 
 ### Tasks
 
-
+1. Input Data and Perform Basic Data Cleaning
+2. Split the Data into Training and Testing Sets
+3. Compare two Oversampling Algorithms (Naive Random Oversampling vs. SMOTE Oversampling)
+4. Compare two Undersampling Algorithms (Cluster Centroids vs. Combination Over and Under Sampling)
+5. Compare two Ensemble Algorithms (Balanced Random Forest Classifier vs. Easy Ensemble AdaBoost Classifier)
 
 ### Approach
 
-
+Use Python within a Jupyter Notebook to Clean Data and Generate Results
 
 ### Deliverables
 
